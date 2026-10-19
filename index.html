@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VideoForge AI | Open-Source AI Video Generator</title>
+    <meta name="theme-color" content="#07070c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta
       name="description"
       content="VideoForge AI is an open-source platform for generating cinematic AI videos with cutting-edge models and long-form creative workflows."
     />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <title>VideoForge AI | Open-Source AI Video Generator</title>
     <style>
       :root {
         --bg: #07070c;
@@ -86,10 +91,6 @@
         content: "◉";
         font-size: 18px;
         color: white;
-      }
-
-      .brand name {
-        display: inline-block;
       }
 
       .brand .brand-word {
@@ -386,7 +387,6 @@
         gap: 18px;
       }
 
-      . model-card??
       .model-list {
         padding: 18px;
       }
@@ -715,5 +715,13 @@
         <span>Open-source AI video generation</span>
       </div>
     </footer>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>
